@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using Assets;
 using UnityEngine.UI;
@@ -39,6 +40,7 @@ public class User: MonoBehaviour
             if(table.Rows.Count>0){
                 PlayerPrefs.SetInt("userid",userid);
                 loginMsg.text ="登入成功";
+                SceneManager.LoadScene("首頁");
                
             }else{
                 loginMsg.text ="帳號或密碼錯誤";
