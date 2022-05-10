@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using Assets;
+using System;
 using UnityEngine.UI;
 using System.Data;
 
@@ -34,11 +36,16 @@ public class User: MonoBehaviour
 	            {
 	                Debug.Log(dataRow[dataColumn]);
                     userid = (int)dataRow[dataColumn];
+                //儲存用戶登入資訊
+                    int uid=Int32.Parse(dataRow[dataColumn].ToString());
+                    PlayerPrefs.SetInt("ID", uid);
+                    PlayerPrefs.SetString("username", username.text);
 	            }
 	        }
             if(table.Rows.Count>0){
                 PlayerPrefs.SetInt("userid",userid);
                 loginMsg.text ="登入成功";
+                SceneManager.LoadScene("首頁");
                
             }else{
                 loginMsg.text ="帳號或密碼錯誤";
