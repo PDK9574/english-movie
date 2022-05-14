@@ -23,7 +23,7 @@ public class User: MonoBehaviour
         {
             if (isSpace(username) && isSpace(password) )
             {
-                sql.InsertInto("user", new string[] { "username", "password", "email", "createTime" }, new string[] { username.text, password.text, regDate });
+                sql.InsertInto("user", new string[] { "username", "password",  "createTime" }, new string[] { username.text, password.text, regDate });
                 loginMsg.text = "註冊成功";
             }
             else
