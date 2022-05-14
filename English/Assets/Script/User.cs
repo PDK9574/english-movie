@@ -23,35 +23,34 @@ public class User: MonoBehaviour
         }
         sql.Close();
     }
-    public void Login(){
-        sql= new SqlAccess();
-        int userid = 0;
-        if(isSpace(username)&&isSpace(password)){
-            // DataSet ds=sql.QuerySet("Select id from user where name ='" + username.text + "' and password ='" + password.text + "'");
-            DataSet ds = sql.Select("user",new string[] {"id"},new string[] {"username","password"},new string[] {"=","="},new string [] {username.text,password.text});
+    
+    public void Login()
+    {
+        sql = new SqlAccess();
+        if (username.text != null && password.text != null)
+        {
+            DataSet ds = sql.QuerySet("Select id from user where username ='" + username.text + "' and password ='" + password.text + "'");
             DataTable table = ds.Tables[0];
-	        foreach (DataRow dataRow in table.Rows)
-	        {
-	            foreach (DataColumn dataColumn in table.Columns)
-	            {
-	                Debug.Log(dataRow[dataColumn]);
-                    userid = (int)dataRow[dataColumn];
-                //儲存用戶登入資訊
-                    int uid=Int32.Parse(dataRow[dataColumn].ToString());
-                    PlayerPrefs.SetInt("ID", uid);
+            foreach (DataRow dataRow in table.Rows)
+            {
+                foreach (DataColumn dataColumn in table.Columns)
+                {
+                    Debug.Log("登入ID:" + dataRow[dataColumn]);
+                    int userid=Int32.Parse(dataRow[dataColumn].ToString());
+                    PlayerPrefs.SetInt("ID", userid);
                     PlayerPrefs.SetString("username", username.text);
-	            }
-	        }
-            if(table.Rows.Count>0){
-                PlayerPrefs.SetInt("userid",userid);
-                loginMsg.text ="登入成功";
-                SceneManager.LoadScene("首頁");
-               
-            }else{
-                loginMsg.text ="帳號或密碼錯誤";
+                }
             }
-        }else{
-             loginMsg.text ="帳號或密碼不能為空";
+            if (table.Rows.Count > 0)
+            {
+
+                loginMsg.text = "歡迎" + username.text + "登入";
+                SceneManager.LoadScene("logintest");
+            }
+            else
+            {
+                loginMsg.text = "帳號或密碼錯誤";
+            }
         }
         sql.Close();
     }

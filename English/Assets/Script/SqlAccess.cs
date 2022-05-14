@@ -43,9 +43,9 @@ namespace Assets
                 mySqlConnection = new MySqlConnection(sqlString);
                 mySqlConnection.Open();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw new Exception("伺服器連線失敗.....");
+                throw new Exception(e.Message);
             }
         }
         public MySqlConnection GetMySqlConnection(){
