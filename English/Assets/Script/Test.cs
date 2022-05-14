@@ -2,7 +2,7 @@ using Assets;
 using UnityEngine;
 
 using System.Data;
-using  UnityEngine.UI;
+using UnityEngine.UI;
 
 public class Test : MonoBehaviour
 {

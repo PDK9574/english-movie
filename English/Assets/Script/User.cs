@@ -13,14 +13,29 @@ public class User: MonoBehaviour
     public InputField password;
     public Text loginMsg;
     SqlAccess sql;
-    public void newUser(){
-        sql= new SqlAccess();
-        if(isSpace(username)&&isSpace(password)){
-            DataSet ds=sql.InsertInto("user",new string[]{"username","password"},new string[]{username.text,password.text});          
-            loginMsg.text="註冊成功";
-        }else{
-            loginMsg.text="帳密不能為空值";
+    public void register()
+    {
+        string regDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        sql = new SqlAccess();
+        DataSet ds = sql.QuerySet("Select * from user where username ='" + username.text + "'");
+        DataTable table = ds.Tables[0];
+        if (table.Rows.Count == 0)
+        {
+            if (isSpace(username) && isSpace(password) )
+            {
+                sql.InsertInto("user", new string[] { "username", "password", "email", "createTime" }, new string[] { username.text, password.text, regDate });
+                loginMsg.text = "註冊成功";
+            }
+            else
+            {
+                loginMsg.text = "帳密不能為空值";
+            }
         }
+        else
+        {
+            loginMsg.text = "此帳號已經使用過，請換一個!";
+        }
+
         sql.Close();
     }
     
@@ -45,7 +60,7 @@ public class User: MonoBehaviour
             {
 
                 loginMsg.text = "歡迎" + username.text + "登入";
-                SceneManager.LoadScene("logintest");
+                SceneManager.LoadScene("首頁");
             }
             else
             {
