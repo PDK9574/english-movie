@@ -316,10 +316,18 @@ namespace Assets
                 }
             }
         }
+        
         public static string DateTimeNormalize(DateTime dateTime){
           string res =  dateTime.ToString("yyyy-MM-dd HH:mm:ss");
           return res;
         }
+        public bool isDataSetNull(DataSet ds){
+        if(ds.Tables.Count == 1 && ds.Tables[0].Rows.Count == 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
     
     }
    

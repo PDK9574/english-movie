@@ -7,8 +7,9 @@ using UnityEngine.UI;
 public class SqlOperate : MonoBehaviour
 {
   public Text text;
+  public int movieid;
   void Start(){
-      Debug.Log(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+
   }
     public void InsertUserCreate(){
         SqlAccess sql = new SqlAccess();
@@ -17,8 +18,25 @@ public class SqlOperate : MonoBehaviour
 		Debug.Log("新增成功");
         sql.Close();
     }
-    public void Search(){
-      
+    public void showSentence(){
+        SqlAccess sql = new SqlAccess();
+        DataSet ds=sql.QuerySet("Select sentence,chinese  from moviesentence where movie_id ='"+movieid+"'");
+        if(sql.isDataSetNull(ds)!=true){
+         string str = null;
+            if (ds!=null){   
+                for (int i=0; i<ds.Tables[0].Rows.Count; i++) {
+                    for(int j=0;j<ds.Tables[0].Columns.Count;j++)
+                    {	     		
+                        str+=ds.Tables[0].Rows[i][j].ToString().Trim()+"\n";
+                        if(j==ds.Tables[0].Columns.Count-1)
+                        {
+                            text.text+=str;
+                            str="";
+                        }
+                    }
+                }
+            }
+        }
     }
-	
+    
 }

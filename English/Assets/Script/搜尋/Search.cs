@@ -15,7 +15,7 @@ public class Search : MonoBehaviour
         SqlAccess sql = new SqlAccess();
         string english=PlayerPrefs.GetString("Search");
         DataSet ds=sql.QuerySet("Select english,chinese,pos from dictionary where english ='"+english+"'");
-        if(isDataSetNull(ds)!=true){
+        if(sql.isDataSetNull(ds)!=true){
         SqlAccess.LogDatatable(ds);
         showEnglish.text = ds.Tables[0].Rows[0][0].ToString();
         show_CH_pos.text = ds.Tables[0].Rows[0][1].ToString()+"\n"+ds.Tables[0].Rows[0][2].ToString();
@@ -25,16 +25,6 @@ public class Search : MonoBehaviour
         }
         
     }
-    private bool isDataSetNull(DataSet ds){
-        if(ds.Tables.Count == 1 && ds.Tables[0].Rows.Count == 0){
-            return true;
-        }else{
-            return false;
-        }
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
+   
 }
