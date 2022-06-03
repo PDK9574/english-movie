@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 
 public class profile : MonoBehaviour
@@ -8,14 +9,17 @@ public class profile : MonoBehaviour
     public InputField test;
     public Text show_id;
     public Text show_name;
+    public Text Text;
     UnityWebRequest w_Texture;
     UnityWebRequest default_avatar_Texture;//取預設大頭貼
     UnityWebRequest avatar_Texture;//取用戶的大頭貼
     public RawImage Event;
     public RawImage avatar;
 
+
     IEnumerator Start()
     {
+        
         //==============取用戶大頭貼==============
         int nInt = PlayerPrefs.GetInt("ID");
         string sString = PlayerPrefs.GetString("username");
@@ -42,7 +46,7 @@ public class profile : MonoBehaviour
             avatar.rectTransform.sizeDelta = new Vector2(300, 300);
         }
         //==============取活動貼圖，可以更改(目前無用處)==============
-        w_Texture = UnityWebRequestTexture.GetTexture("http://english.tk888.me/baha.png");
+        w_Texture = UnityWebRequestTexture.GetTexture("http://english.tk888.me/event.png");
         yield return w_Texture.SendWebRequest();
 
         if (w_Texture.isNetworkError || w_Texture.isHttpError)
@@ -57,6 +61,7 @@ public class profile : MonoBehaviour
         }
         // // Load();
         // //StartCoroutine(Download_File());
+        checkLogin();
     }
 
     IEnumerator Download_File()
@@ -111,5 +116,9 @@ public class profile : MonoBehaviour
             avatar.SetNativeSize();
         }
     }
-
+    public void checkLogin(){
+        if( PlayerPrefs.GetInt("ID")==0 ){
+            SceneManager.LoadScene("login");
+        }
+    }
 }

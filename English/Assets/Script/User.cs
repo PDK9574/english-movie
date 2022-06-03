@@ -13,6 +13,10 @@ public class User: MonoBehaviour
     public InputField password;
     public Text loginMsg;
     SqlAccess sql;
+        void Start()
+    {
+        checkLogin();
+    }
     public void register()
     {
         string regDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
@@ -86,6 +90,16 @@ public class User: MonoBehaviour
         }
             return false;
     }
-    
+    //檢查登入狀態
+        private void checkLogin(){
+        if( PlayerPrefs.GetInt("ID")!=0 && PlayerPrefs.GetString("username")!=null){
+            SceneManager.LoadScene("首頁");
+        }
+        else{
+            loginMsg.text="請先登入";
+        }
+        // int nInt = PlayerPrefs.GetInt("ID");
+        // string sString = PlayerPrefs.GetString("username");
+    }
      
 }
