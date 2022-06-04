@@ -3,29 +3,11 @@
     "m_SelectedPackage": {
         "deviceId": "R5CR910ZZJA",
         "name": "com.SchoolCompany.English",
-        "processId": 2297,
+        "processId": 10078,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
-        {
-            "deviceId": "R5CR910ZZJA",
-            "name": "com.SchoolCompany.English",
-            "processId": 3316,
-            "exited": true
-        },
-        {
-            "deviceId": "R5CR910ZZJA",
-            "name": "com.SchoolCompany.English",
-            "processId": 31876,
-            "exited": true
-        },
-        {
-            "deviceId": "R5CR910ZZJA",
-            "name": "com.SchoolCompany.English",
-            "processId": 32470,
-            "exited": true
-        },
         {
             "deviceId": "R5CR910ZZJA",
             "name": "com.SchoolCompany.English",
@@ -42,12 +24,48 @@
             "deviceId": "R5CR910ZZJA",
             "name": "com.SchoolCompany.English",
             "processId": 32435,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "R5CR910ZZJA",
             "name": "com.SchoolCompany.English",
             "processId": 2297,
+            "exited": true
+        },
+        {
+            "deviceId": "R5CR910ZZJA",
+            "name": "com.SchoolCompany.English",
+            "processId": 1616,
+            "exited": true
+        },
+        {
+            "deviceId": "R5CR910ZZJA",
+            "name": "com.SchoolCompany.English",
+            "processId": 30316,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR910ZZJA",
+            "name": "com.SchoolCompany.English",
+            "processId": 32139,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR910ZZJA",
+            "name": "com.SchoolCompany.English",
+            "processId": 32277,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR910ZZJA",
+            "name": "com.SchoolCompany.English",
+            "processId": 7197,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR910ZZJA",
+            "name": "com.SchoolCompany.English",
+            "processId": 10078,
             "exited": false
         }
     ],

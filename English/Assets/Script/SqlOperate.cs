@@ -1,4 +1,3 @@
-
 using System;
 using System.Data;
 using Assets;
@@ -19,20 +18,24 @@ public class SqlOperate : MonoBehaviour
         sql.Close();
     }
     public void showSentence(){
+        text.text="";
         SqlAccess sql = new SqlAccess();
-        DataSet ds=sql.QuerySet("Select sentence,chinese  from moviesentence where movie_id ='"+movieid+"'");
+        DataSet ds=sql.QuerySet("SELECT ch_movie_name,sentence,chinese FROM english.moviesentence as a join english.movie as b on a.movie_id=b.id where movietype_id='"+movieid+"'");
         if(sql.isDataSetNull(ds)!=true){
-         string str = null;
+         string str = "";
             if (ds!=null){   
                 for (int i=0; i<ds.Tables[0].Rows.Count; i++) {
                     for(int j=0;j<ds.Tables[0].Columns.Count;j++)
                     {	     		
                         str+=ds.Tables[0].Rows[i][j].ToString().Trim()+"\n";
-                        if(j==ds.Tables[0].Columns.Count-1)
-                        {
-                            text.text+=str;
-                            str="";
-                        }
+                        text.text+=str;
+                        str="";
+                        // if(j==ds.Tables[0].Columns.Count-1)
+                        // {
+                        //     text.text+=str;
+                        //     str="";
+                        // }
+                        Debug.Log(ds.Tables[0].Rows[i][j].ToString());
                     }
                 }
             }

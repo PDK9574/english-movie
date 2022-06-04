@@ -242,6 +242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pageName: "\u77E5\u8B58\u738B"
+  searchField: {fileID: 0}
 --- !u!1 &7195577469106326806
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,6 +485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pageName: "\u8A0E\u8AD6\u5340"
+  searchField: {fileID: 0}
 --- !u!1 &7195577469780285996
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,7 +524,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -105.187805, y: -598.32983}
+  m_AnchoredPosition: {x: -104, y: -600}
   m_SizeDelta: {x: 163.7365, y: 180.6556}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7195577469780285993
@@ -647,6 +649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pageName: "\u9996\u9801"
+  searchField: {fileID: 0}
 --- !u!1 &7195577470317840440
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,6 +892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pageName: "\u500B\u4EBA\u6A94\u6848"
+  searchField: {fileID: 0}
 --- !u!1 &7195577470729932877
 GameObject:
   m_ObjectHideFlags: 0
