@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "R5CR910ZZJA",
         "name": "com.SchoolCompany.English",
-        "processId": 10078,
+        "processId": 15663,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -66,6 +66,12 @@
             "deviceId": "R5CR910ZZJA",
             "name": "com.SchoolCompany.English",
             "processId": 10078,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR910ZZJA",
+            "name": "com.SchoolCompany.English",
+            "processId": 15663,
             "exited": false
         }
     ],

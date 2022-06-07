@@ -11,6 +11,7 @@ public class User: MonoBehaviour
 {
     public InputField username;
     public InputField password;
+    public InputField email;
     public Text loginMsg;
     SqlAccess sql;
         void Start()
@@ -25,9 +26,9 @@ public class User: MonoBehaviour
         DataTable table = ds.Tables[0];
         if (table.Rows.Count == 0)
         {
-            if (isSpace(username) && isSpace(password) )
+            if (isSpace(username) && isSpace(password) && isSpace(email) )
             {
-                sql.InsertInto("user", new string[] { "username", "password",  "createTime" }, new string[] { username.text, password.text, regDate });
+                sql.InsertInto("user", new string[] { "username", "password","email",  "createTime" }, new string[] { username.text, password.text,email.text, regDate });
                 loginMsg.text = "註冊成功";
             }
             else

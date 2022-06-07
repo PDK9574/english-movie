@@ -17,6 +17,7 @@ public class Search : MonoBehaviour
     void Start()
     {
       
+
        
         string english=PlayerPrefs.GetString("Search");
         int searchtype = PlayerPrefs.GetInt("Searchtype");
@@ -28,6 +29,7 @@ public class Search : MonoBehaviour
             SqlAccess sql = new SqlAccess();
             DataSet ds=sql.QuerySet("Select english,chinese,pos from dictionary where english ='"+english+"'");
            
+
             if(sql.isDataSetNull(ds)!=true){
             SqlAccess.LogDatatable(ds);
             showEnglish.text = ds.Tables[0].Rows[0][0].ToString();
@@ -39,6 +41,7 @@ public class Search : MonoBehaviour
             sql.Close();
         //搜尋金句
         }else if(searchtype == 0){
+
             //不顯示字典
             dicitonaryshow.SetActive(false);
             GameObject 金句 = transform.GetChild(0).gameObject;
@@ -59,6 +62,7 @@ public class Search : MonoBehaviour
                         g.transform.GetChild(0).GetComponent<Text>().text = En;
                         g.transform.GetChild(1).GetComponent<Text>().text = Ch;
                         g.transform.GetChild(2).GetComponent<Text>().text = "《"+Name+"》";
+
                         
                     }
                     Destroy(金句);
