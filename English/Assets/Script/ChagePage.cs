@@ -7,6 +7,7 @@ public class ChagePage : MonoBehaviour
   
     public string pageName;
     public InputField searchField;
+    public Dropdown searchtype;
     // public SceneFaded sceneFaded;
 
     // public void changePageWithAni(){
@@ -21,6 +22,7 @@ public class ChagePage : MonoBehaviour
     /// </summary>
     public void chagePageAndSet(){
         PlayerPrefs.SetString("Search",searchField.text);
+        PlayerPrefs.SetInt("Searchtype",searchtype.value);
         SceneManager.LoadScene(pageName);
     }
 
