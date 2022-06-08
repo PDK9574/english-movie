@@ -10,12 +10,13 @@ using Assets;
 //監聽按鈕
 public static class ButtonExtension
 {
-	public static void AddEventListener<T> (this Button button, T param, Action<T> OnClick)
-	{
-		button.onClick.AddListener (delegate() {
-			OnClick (param);
-		});
-	}
+    public static void AddEventListener<T>(this Button button, T param, Action<T> OnClick)
+    {
+        button.onClick.AddListener(delegate ()
+        {
+            OnClick(param);
+        });
+    }
 }
 public class UI_list : MonoBehaviour
 {
@@ -42,17 +43,18 @@ public class UI_list : MonoBehaviour
                     g = Instantiate(金句, transform);
                     g.transform.GetChild(0).GetComponent<Text>().text = En;
                     g.transform.GetChild(1).GetComponent<Text>().text = Ch;
-                    g.transform.GetChild(2).GetComponent<Text>().text = "《"+Name+"》";
-                    g.GetComponent <Button> ().AddEventListener (i, Detail);
+                    g.transform.GetChild(2).GetComponent<Text>().text = "《" + Name + "》";
+                    g.GetComponent<Button>().AddEventListener(i, Detail);
                 }
                 Destroy(金句);
             }
         }
     }
-    public void Detail(int itemIndex){
+    public void Detail(int itemIndex)
+    {
         SqlAccess sql = new SqlAccess();
         DataSet ds = sql.QuerySet("SELECT ch_movie_name,sentence,chinese FROM english.moviesentence as a join english.movie as b on a.movie_id=b.id where movietype_id='" + movietype_id + "'");
-        movieDetail.text=ds.Tables[0].Rows[itemIndex][1].ToString()+"\n\n"+ds.Tables[0].Rows[itemIndex][2].ToString()+"\n\n《"+ds.Tables[0].Rows[itemIndex][0].ToString()+"》";
-        // 
+        movieDetail.text = ds.Tables[0].Rows[itemIndex][1].ToString() + "\n\n" + ds.Tables[0].Rows[itemIndex][2].ToString() + "\n\n《" + ds.Tables[0].Rows[itemIndex][0].ToString() + "》";
+        
     }
 }
