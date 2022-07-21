@@ -22,6 +22,7 @@ public class UI_list : MonoBehaviour
 {
     public int movietype_id;
     public Text movieDetail;
+    public int movieid;
 
     // Start is called before the first frame update
     void Start()
@@ -51,10 +52,19 @@ public class UI_list : MonoBehaviour
         }
     }
     public void Detail(int itemIndex)
-    {
+   {
         SqlAccess sql = new SqlAccess();
-        DataSet ds = sql.QuerySet("SELECT ch_movie_name,sentence,chinese FROM english.moviesentence as a join english.movie as b on a.movie_id=b.id where movietype_id='" + movietype_id + "'");
+        DataSet ds = sql.QuerySet("SELECT ch_movie_name,sentence,chinese,b.id  FROM english.moviesentence as a join english.movie as b on a.movie_id=b.id where movietype_id='" + movietype_id + "'");
         movieDetail.text = ds.Tables[0].Rows[itemIndex][1].ToString() + "\n\n" + ds.Tables[0].Rows[itemIndex][2].ToString() + "\n\n《" + ds.Tables[0].Rows[itemIndex][0].ToString() + "》";
+        movieid = Convert.ToInt32(ds.Tables[0].Rows[itemIndex][3]);
+    }
+    public void Favorite(){
+        Debug.Log("現在頁面電影id"+movieid);
+        Debug.Log("現在頁面使用者id"+PlayerPrefs.GetInt("ID"));
+        if(User.isLogin()){
+            SqlAccess sql = new SqlAccess();
+            DataSet ds = sql.QuerySet("insert into favorite(userid,favoriteid) VALUES ("+PlayerPrefs.GetInt("ID")+","+movieid+")");
+        }
         
     }
 }

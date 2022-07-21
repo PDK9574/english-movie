@@ -74,11 +74,11 @@ public class User: MonoBehaviour
         }
         sql.Close();
     }
-    public void isLogin(){
-        if(PlayerPrefs.GetInt("userid")!=0){
-         Debug.Log(PlayerPrefs.GetInt("userid"));
+    public static bool isLogin(){
+        if(PlayerPrefs.GetInt("ID")!=0){
+            return true;
         }else{
-             Debug.Log("你尚未登入");
+            return false;
         }
     }
     ///<summary>
