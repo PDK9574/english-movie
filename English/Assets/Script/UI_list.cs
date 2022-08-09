@@ -57,14 +57,33 @@ public class UI_list : MonoBehaviour
         DataSet ds = sql.QuerySet("SELECT ch_movie_name,sentence,chinese,b.id  FROM english.moviesentence as a join english.movie as b on a.movie_id=b.id where movietype_id='" + movietype_id + "'");
         movieDetail.text = ds.Tables[0].Rows[itemIndex][1].ToString() + "\n\n" + ds.Tables[0].Rows[itemIndex][2].ToString() + "\n\n《" + ds.Tables[0].Rows[itemIndex][0].ToString() + "》";
         movieid = Convert.ToInt32(ds.Tables[0].Rows[itemIndex][3]);
+        //紀錄觀看次數
+        DataSet ds1=sql.QuerySet("select count(*) from hotmv where movieid ='"+movieid+"'");
+        if(Convert.ToInt32(ds1.Tables[0].Rows[0][0])>0){
+           sql.QuerySet("UPDATE hotmv SET views=views+1 WHERE movieid='"+movieid+"'");
+            Debug.Log("電影id"+movieid+"資料觀看次數新增");
+        }else{
+            sql.QuerySet("INSERT INTO `english`.`hotmv` (`views`,`movieid`, `lastupdateTime`) VALUES ('1','"+movieid+"', '2022-06-06 11:41:37');");
+            Debug.Log("電影id"+movieid+"資料觀看次數新增");
+        }
     }
+    /// <summary>
+    /// 收藏功能
+    /// </summary>
     public void Favorite(){
+        SqlAccess sql = new SqlAccess();
         Debug.Log("現在頁面電影id"+movieid);
         Debug.Log("現在頁面使用者id"+PlayerPrefs.GetInt("ID"));
+        DataSet ds1=sql.QuerySet("select count(*) from favorite where userid ='"+PlayerPrefs.GetInt("ID")+"' and favoriteid = '"+movieid+"'");
         if(User.isLogin()){
-            SqlAccess sql = new SqlAccess();
-            DataSet ds = sql.QuerySet("insert into favorite(userid,favoriteid) VALUES ("+PlayerPrefs.GetInt("ID")+","+movieid+")");
+            if(Convert.ToInt32(ds1.Tables[0].Rows[0][0])>0){
+                Debug.Log("你已收藏");
+            }else{
+                DataSet ds = sql.QuerySet("insert into favorite(userid,favoriteid) VALUES ("+PlayerPrefs.GetInt("ID")+","+movieid+")");
+                Debug.Log("收藏成功");
+            }
         }
-        
     }
+
+
 }
