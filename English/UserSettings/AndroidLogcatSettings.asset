@@ -1,9 +1,9 @@
 {
-    "m_SelectedDeviceId": "R5CR910ZZJA",
+    "m_SelectedDeviceId": "91247d03",
     "m_SelectedPackage": {
-        "deviceId": "R5CR910ZZJA",
+        "deviceId": "91247d03",
         "name": "com.SchoolCompany.English",
-        "processId": 15663,
+        "processId": 5881,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -72,6 +72,24 @@
             "deviceId": "R5CR910ZZJA",
             "name": "com.SchoolCompany.English",
             "processId": 15663,
+            "exited": false
+        },
+        {
+            "deviceId": "91247d03",
+            "name": "com.bbk.launcher2",
+            "processId": 8115,
+            "exited": false
+        },
+        {
+            "deviceId": "91247d03",
+            "name": "com.SchoolCompany.English",
+            "processId": 27870,
+            "exited": false
+        },
+        {
+            "deviceId": "91247d03",
+            "name": "com.SchoolCompany.English",
+            "processId": 5881,
             "exited": false
         }
     ],

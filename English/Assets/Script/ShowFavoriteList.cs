@@ -7,9 +7,7 @@ using UnityEngine.UI;
 
 public class ShowFavoriteList : MonoBehaviour
 {
-
-    // 收藏句子顯示
-    public void Show(){
+    public void Start(){
         GameObject 收藏句子 = transform.GetChild(0).gameObject;
         GameObject g;
         SqlAccess sql = new SqlAccess();
@@ -35,6 +33,10 @@ public class ShowFavoriteList : MonoBehaviour
                 Destroy(收藏句子);
             }
         }
+    }
+    // 收藏句子顯示
+    public void Show(){
+   
     }
 
 }
