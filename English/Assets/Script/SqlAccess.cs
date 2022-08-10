@@ -164,7 +164,7 @@ namespace Assets
         public DataSet UpdateInto(string tableName, string[] cols, string[] colsvalues, string selectkey, string selectvalue)
         {
 
-            string query = "UPDATE " + tableName + " SET " + cols[0] + " = " + colsvalues[0];
+            string query = "UPDATE " + tableName + " SET " + cols[0] + " = '" + colsvalues[0]+"'";
 
             for (int i = 1; i < colsvalues.Length; ++i)
             {
@@ -172,7 +172,7 @@ namespace Assets
                 query += ", " + cols[i] + " =" + colsvalues[i];
             }
 
-            query += " WHERE " + selectkey + " = " + selectvalue + " ";
+            query += " WHERE " + selectkey + " = '" + selectvalue + "' ";
 
             return QuerySet(query);
         }

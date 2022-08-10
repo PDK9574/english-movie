@@ -75,6 +75,7 @@
             "exited": false
         },
         {
+<<<<<<< Updated upstream
             "deviceId": "91247d03",
             "name": "com.bbk.launcher2",
             "processId": 8115,
@@ -90,6 +91,23 @@
             "deviceId": "91247d03",
             "name": "com.SchoolCompany.English",
             "processId": 5881,
+=======
+            "deviceId": "R5CR910ZZJA",
+            "name": "com.SchoolCompany.English",
+            "processId": 24461,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR910ZZJA",
+            "name": "com.SchoolCompany.English",
+            "processId": 2271,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR910ZZJA",
+            "name": "com.SchoolCompany.English",
+            "processId": 17930,
+>>>>>>> Stashed changes
             "exited": false
         }
     ],
