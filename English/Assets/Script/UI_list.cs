@@ -54,7 +54,7 @@ public class UI_list : MonoBehaviour
     public void Detail(int itemIndex)
    {
         SqlAccess sql = new SqlAccess();
-        DataSet ds = sql.QuerySet("SELECT ch_movie_name,sentence,chinese,b.id  FROM english.moviesentence as a join english.movie as b on a.movie_id=b.id where movietype_id='" + movietype_id + "'");
+        DataSet ds = sql.QuerySet("SELECT ch_movie_name,sentence,chinese,a.id  FROM english.moviesentence as a join english.movie as b on a.movie_id=b.id where movietype_id='" + movietype_id + "'");
         movieDetail.text = ds.Tables[0].Rows[itemIndex][1].ToString() + "\n\n" + ds.Tables[0].Rows[itemIndex][2].ToString() + "\n\n《" + ds.Tables[0].Rows[itemIndex][0].ToString() + "》";
         movieid = Convert.ToInt32(ds.Tables[0].Rows[itemIndex][3]);
         //紀錄觀看次數
