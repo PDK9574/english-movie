@@ -89,6 +89,7 @@ public class profile : MonoBehaviour
     {
         PlayerPrefs.DeleteKey("ID");
         PlayerPrefs.DeleteKey("username");
+        SceneManager.LoadScene("login");
     }
     public void Load()
     {
