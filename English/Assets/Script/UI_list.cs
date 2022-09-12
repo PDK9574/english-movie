@@ -24,7 +24,7 @@ public class UI_list : MonoBehaviour
     public Text movieDetail;
     public int movieid;
     //5種排列順序:預設、A-Z、Z-A、新到舊、舊到新
-    string def = "SELECT ch_movie_name,sentence,chinese,a.id,lastupdatetime FROM english.moviesentence as a join english.movie as b on a.movie_id=b.id where movietype_id=1";
+    string def = "SELECT ch_movie_name,sentence,chinese,a.id,lastupdatetime FROM english.moviesentence as a join english.movie as b on a.movie_id=b.id where movietype_id=";
     string a2z = "SELECT ch_movie_name,sentence,chinese,a.id,lastupdatetime FROM english.moviesentence as a join english.movie as b on a.movie_id=b.id where movietype_id=1 order by sentence";
     string z2a = "SELECT ch_movie_name,sentence,chinese,a.id,lastupdatetime FROM english.moviesentence as a join english.movie as b on a.movie_id=b.id where movietype_id=1 order by sentence desc";
     string updatetime = "SELECT ch_movie_name,sentence,chinese,a.id,lastupdatetime FROM english.moviesentence as a join english.movie as b on a.movie_id=b.id where movietype_id=1 order by lastupdatetime";
