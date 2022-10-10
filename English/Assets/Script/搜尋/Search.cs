@@ -37,8 +37,8 @@ public class Search : MonoBehaviour
             }
             else
             {
-                showEnglish.text = "找不到";
-                show_CH_pos.text = "找不到";
+                showEnglish.text = "未收錄此單字";
+                show_CH_pos.text = "未收錄此單字";
             }
             sql.Close();
             //搜尋金句

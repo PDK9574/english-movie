@@ -24,7 +24,7 @@ public class UI_list : MonoBehaviour
     public Text movieDetail;
     public int movieid;
     //5種排列順序:預設、A-Z、Z-A、新到舊、舊到新
-    string def = "SELECT ch_movie_name,sentence,chinese,a.id,lastupdatetime FROM english.moviesentence as a join english.movie as b on a.movie_id=b.id where movietype_id=";
+    string def = "SELECT ch_movie_name,sentence,chinese,a.id,lastupdatetime FROM english.moviesentence as a join english.movie as b on a.movie_id=b.id where movietype_id=1";
     string a2z = "SELECT ch_movie_name,sentence,chinese,a.id,lastupdatetime FROM english.moviesentence as a join english.movie as b on a.movie_id=b.id where movietype_id=1 order by sentence";
     string z2a = "SELECT ch_movie_name,sentence,chinese,a.id,lastupdatetime FROM english.moviesentence as a join english.movie as b on a.movie_id=b.id where movietype_id=1 order by sentence desc";
     string updatetime = "SELECT ch_movie_name,sentence,chinese,a.id,lastupdatetime FROM english.moviesentence as a join english.movie as b on a.movie_id=b.id where movietype_id=1 order by lastupdatetime";
@@ -74,7 +74,7 @@ public class UI_list : MonoBehaviour
     {
         SqlAccess sql = new SqlAccess();
         // "SELECT ch_movie_name,sentence,chinese,a.id,lastupdatetime  FROM english.moviesentence as a join english.movie as b on a.movie_id=b.id where movietype_id='" + movietype_id + "'"
-        DataSet ds = sql.QuerySet(moviename);
+        DataSet ds = sql.QuerySet(def);
 
         movieDetail.text = ds.Tables[0].Rows[itemIndex][1].ToString() + "\n\n" + ds.Tables[0].Rows[itemIndex][2].ToString() + "\n\n《" + ds.Tables[0].Rows[itemIndex][0].ToString() + "》";
         movieid = Convert.ToInt32(ds.Tables[0].Rows[itemIndex][3]);
