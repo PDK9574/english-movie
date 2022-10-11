@@ -21,9 +21,11 @@ public class ChagePage : MonoBehaviour
     /// 換頁面同時設定參數
     /// </summary>
     public void chagePageAndSet(){
-        PlayerPrefs.SetString("Search",searchField.text);
-        PlayerPrefs.SetInt("Searchtype",searchtype.value);
-        SceneManager.LoadScene(pageName);
+        if(searchField.text.Length != 0){
+            PlayerPrefs.SetString("Search",searchField.text);
+            PlayerPrefs.SetInt("Searchtype",searchtype.value);
+            SceneManager.LoadScene(pageName);
+        }
     }
 
 }
