@@ -46,7 +46,7 @@ public class profile : MonoBehaviour
             avatar.rectTransform.sizeDelta = new Vector2(300, 300);
         }
         //==============取活動貼圖，可以更改(目前無用處)==============
-        w_Texture = UnityWebRequestTexture.GetTexture("http://english.tk888.me/event.png");
+        w_Texture = UnityWebRequestTexture.GetTexture("http://english.tk888.me/photo/event.png");
         yield return w_Texture.SendWebRequest();
 
         if (w_Texture.isNetworkError || w_Texture.isHttpError)
@@ -57,7 +57,7 @@ public class profile : MonoBehaviour
         {
             Event.texture = DownloadHandlerTexture.GetContent(w_Texture);
             Event.SetNativeSize();
-            Event.rectTransform.sizeDelta = new Vector2(945, 420);
+            // Event.rectTransform.sizeDelta = new Vector2(945, 420);
         }
         // // Load();
         // //StartCoroutine(Download_File());

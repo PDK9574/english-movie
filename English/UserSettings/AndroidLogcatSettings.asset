@@ -1,146 +1,13 @@
 {
-    "m_SelectedDeviceId": "91247d03",
+    "m_SelectedDeviceId": "",
     "m_SelectedPackage": {
-        "deviceId": "91247d03",
-        "name": "com.SchoolCompany.English",
-        "processId": 25106,
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
         "exited": false
     },
     "m_SelectedPriority": 0,
-    "m_KnownPackagesForSerialization": [
-        {
-            "deviceId": "R5CR910ZZJA",
-            "name": "com.SchoolCompany.English",
-            "processId": 9764,
-            "exited": true
-        },
-        {
-            "deviceId": "R5CR910ZZJA",
-            "name": "com.SchoolCompany.English",
-            "processId": 32234,
-            "exited": true
-        },
-        {
-            "deviceId": "R5CR910ZZJA",
-            "name": "com.SchoolCompany.English",
-            "processId": 32435,
-            "exited": true
-        },
-        {
-            "deviceId": "R5CR910ZZJA",
-            "name": "com.SchoolCompany.English",
-            "processId": 2297,
-            "exited": true
-        },
-        {
-            "deviceId": "R5CR910ZZJA",
-            "name": "com.SchoolCompany.English",
-            "processId": 1616,
-            "exited": true
-        },
-        {
-            "deviceId": "R5CR910ZZJA",
-            "name": "com.SchoolCompany.English",
-            "processId": 30316,
-            "exited": false
-        },
-        {
-            "deviceId": "R5CR910ZZJA",
-            "name": "com.SchoolCompany.English",
-            "processId": 32139,
-            "exited": false
-        },
-        {
-            "deviceId": "R5CR910ZZJA",
-            "name": "com.SchoolCompany.English",
-            "processId": 32277,
-            "exited": false
-        },
-        {
-            "deviceId": "R5CR910ZZJA",
-            "name": "com.SchoolCompany.English",
-            "processId": 7197,
-            "exited": false
-        },
-        {
-            "deviceId": "R5CR910ZZJA",
-            "name": "com.SchoolCompany.English",
-            "processId": 10078,
-            "exited": false
-        },
-        {
-            "deviceId": "R5CR910ZZJA",
-            "name": "com.SchoolCompany.English",
-            "processId": 15663,
-            "exited": false
-        },
-        {
-<<<<<<< Updated upstream
-            "deviceId": "91247d03",
-            "name": "com.bbk.launcher2",
-            "processId": 8115,
-            "exited": false
-        },
-        {
-            "deviceId": "91247d03",
-            "name": "com.SchoolCompany.English",
-            "processId": 27870,
-            "exited": false
-        },
-        {
-            "deviceId": "91247d03",
-            "name": "com.SchoolCompany.English",
-            "processId": 5881,
-=======
-            "deviceId": "R5CR910ZZJA",
-            "name": "com.SchoolCompany.English",
-            "processId": 24461,
-            "exited": false
-        },
-        {
-            "deviceId": "R5CR910ZZJA",
-            "name": "com.SchoolCompany.English",
-            "processId": 2271,
-            "exited": false
-        },
-        {
-            "deviceId": "R5CR910ZZJA",
-            "name": "com.SchoolCompany.English",
-            "processId": 17930,
->>>>>>> Stashed changes
-            "exited": false
-        },
-        {
-            "deviceId": "91247d03",
-            "name": "com.SchoolCompany.English",
-            "processId": 14436,
-            "exited": false
-        },
-        {
-            "deviceId": "91247d03",
-            "name": "com.SchoolCompany.English",
-            "processId": 15557,
-            "exited": false
-        },
-        {
-            "deviceId": "91247d03",
-            "name": "com.SchoolCompany.English",
-            "processId": 17384,
-            "exited": false
-        },
-        {
-            "deviceId": "91247d03",
-            "name": "com.SchoolCompany.English",
-            "processId": 23360,
-            "exited": false
-        },
-        {
-            "deviceId": "91247d03",
-            "name": "com.SchoolCompany.English",
-            "processId": 25106,
-            "exited": false
-        }
-    ],
+    "m_KnownPackagesForSerialization": [],
     "m_Tags": {
         "m_Entries": [
             {
@@ -174,20 +41,9 @@
         ]
     },
     "m_MemoryViewerState": {
-        "MemoryWindowHeight": 300.0,
-        "MemoryWindowWidth": 170.0,
-        "MemoryTypeEnabled": [
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true,
-            true
-        ],
+        "MemoryWindowHeight": 0.0,
+        "MemoryWindowWidth": 0.0,
+        "MemoryTypeEnabled": [],
         "MemoryGroup": 2,
         "Behavior": 0
     },

@@ -15,33 +15,60 @@ public class comment : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        sentence(); 
+    }
+
+    // Update is called once per frame
+    public void send_sentence()
+    {
+        string Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         sql = new SqlAccess();
-        DataSet ds = sql.QuerySet("Select id,text,authorid,lastupdateTime from comment");
+        sql.InsertInto("comment", new string[] { "text", "lastupdateTime", "authorid","c_type" }, new string[] { messagebox.text, Date, PlayerPrefs.GetInt("ID").ToString(),"sentence" });
+        sentence();
+    }
+    public void send_other()
+    {
+        string Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        sql = new SqlAccess();
+        sql.InsertInto("comment", new string[] { "text", "lastupdateTime", "authorid","c_type"  }, new string[] { messagebox.text, Date, PlayerPrefs.GetInt("ID").ToString(),"other" });
+        other();
+    }
+
+    public void sentence() {
+        sql = new SqlAccess();
+        DataSet ds = sql.QuerySet("Select text,authorid,lastupdateTime from english.comment where c_type='sentence'");
         DataTable table = ds.Tables[0];
         showmessage.text = "";
         for (int j = 0; j < ds.Tables[0].Rows.Count; j++)
         {
-            string id = table.Rows[j][0].ToString();
-            string comment = table.Rows[j][1].ToString();
-            string author = table.Rows[j][2].ToString();
-            string date = table.Rows[j][3].ToString();
+            // string id = table.Rows[j][0].ToString();
+            string comment = table.Rows[j][0].ToString();
+            string author = table.Rows[j][1].ToString();
+            string date = table.Rows[j][2].ToString();
 
             DateTime dt = new DateTime();
             DateTime.TryParse(date, out dt);
             date = dt.ToString("yyyy/MM/dd");
-            showmessage.text += id + ".用戶" + author + " 說 " + comment + " (" + date + ")\n";
+            showmessage.text += "用戶 "+author + " 說 " + comment + " (" + date + ")\n";
         }
-
-        
     }
-
-    // Update is called once per frame
-    public void send()
-    {
-        string Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+    public void other(){
         sql = new SqlAccess();
-        sql.InsertInto("comment", new string[] { "text", "lastupdateTime", "authorid" }, new string[] { messagebox.text, Date, PlayerPrefs.GetInt("ID").ToString() });
-        Start();
+        DataSet ds = sql.QuerySet("Select text,authorid,lastupdateTime from english.comment where c_type='other'");
+        DataTable table = ds.Tables[0];
+        showmessage.text = "";
+        for (int j = 0; j < ds.Tables[0].Rows.Count; j++)
+        {
+            // string id = table.Rows[j][0].ToString();
+            string comment = table.Rows[j][0].ToString();
+            string author = table.Rows[j][1].ToString();
+            string date = table.Rows[j][2].ToString();
+
+            DateTime dt = new DateTime();
+            DateTime.TryParse(date, out dt);
+            date = dt.ToString("yyyy/MM/dd");
+            showmessage.text += "用戶 "+author + " 說 " + comment + " (" + date + ")\n";
+        }
     }
 
 }
