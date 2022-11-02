@@ -10,7 +10,7 @@ public class InsertSentence : MonoBehaviour
     public InputField 句子;
     public InputField 中文;
     public InputField 電影名;
-    public InputField 類型;
+    public Dropdown 類型;
     public InputField 句子時間;
      public void Start()
     {
@@ -44,11 +44,13 @@ public class InsertSentence : MonoBehaviour
     public void Click()
     {
         SqlAccess sql = new SqlAccess();
-        if(句子.text == String.Empty ||中文.text == String.Empty || 電影名.text == String.Empty || 類型.text == String.Empty || 句子時間.text == String.Empty){
+        
+        if(句子.text == String.Empty ||中文.text == String.Empty || 電影名.text == String.Empty || 類型.options[類型.value].text == String.Empty || 句子時間.text == String.Empty){
+           
             Debug.Log("null");
-        }else if(checkString(中文.text)&&checkString(電影名.text)&&checkString(類型.text)){
+        }else if(checkString(中文.text)&&checkString(電影名.text)&&checkString(類型.options[類型.value].text)){
             sql.InsertInto("usercreate",new string [] {"sentence","chinese","moviename","movietype","time","uploadTime","create_id"},
-            new string[] {句子.text,中文.text,電影名.text,類型.text,句子時間.text,SqlAccess.DateTimeNormalize(DateTime.Now) ,PlayerPrefs.GetInt("ID").ToString()});
+            new string[] {句子.text,中文.text,電影名.text,類型.options[類型.value].text,句子時間.text,SqlAccess.DateTimeNormalize(DateTime.Now) ,PlayerPrefs.GetInt("ID").ToString()});
             Debug.Log("新增成功");
         }else{
             Debug.Log("類型錯誤");
