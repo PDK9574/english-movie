@@ -12,26 +12,18 @@ public class BackGroundBTN : MonoBehaviour
     public Sprite newSprite2;
     public Sprite newSprite3;
     public Sprite newSprite4;
-    public int imageNumber = 0;
+    public int imageNumber ;
 
 
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
 
     // Update is called once per frame
-    void Update()
+    public void Start()
     {
+        imageNumber = PlayerPrefs.GetInt("imageNumber",1);
 
-    }
-    public void NewImage()
-    {
-        imageNumber++;
-       // PlayerPrefs.s
         if (imageNumber == 1)
             original.sprite = newSprite;
 
@@ -39,17 +31,50 @@ public class BackGroundBTN : MonoBehaviour
             original.sprite = newSprite2;
 
         if (imageNumber == 3)
-        
+
             original.sprite = newSprite3;
-            
-        
+
+
         if (imageNumber == 4)
         {
             original.sprite = newSprite4;
             imageNumber = 0;
         }
+    }
+    public void SetImage()
+    {
 
+      
+            
+            imageNumber ++;
+      
+
+        PlayerPrefs.SetInt("imageNumber", imageNumber);
+
+
+        if (imageNumber == 1)
+            original.sprite = newSprite;
+
+        if (imageNumber == 2)
+            original.sprite = newSprite2;
+
+        if (imageNumber == 3)
+
+            original.sprite = newSprite3;
+
+
+        if (imageNumber == 4)
+        {
+            original.sprite = newSprite4;
+            imageNumber = 0;
+        }
+       
 
 
     }
+ 
+
+
+
 }
+
