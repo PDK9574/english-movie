@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: "Assets/Scenes/\u5BE6\u969B\u4F7F\u7528\u5834\u666F/login.unity"
     guid: 3a786de13d997e146808d19a869914e5
   - enabled: 1
-    path: "Assets/Scenes/\u5BE6\u969B\u4F7F\u7528\u5834\u666F/\u8A0E\u8AD6\u5340.unity"
-    guid: a36f33a8ffe44a34ba2abea593a98054
-  - enabled: 1
     path: "Assets/Scenes/\u5BE6\u969B\u4F7F\u7528\u5834\u666F/\u9996\u9801.unity"
     guid: 946bd6ae9fc0f404c818957ac28bddf4
   - enabled: 1
@@ -53,4 +50,10 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/\u5BE6\u969B\u4F7F\u7528\u5834\u666F/\u5FD8\u8A18\u5BC6\u78BC.unity"
     guid: 8cfc500f4e79d41498d04f2a0e441e61
+  - enabled: 1
+    path: "Assets/Scenes/\u5BE6\u969B\u4F7F\u7528\u5834\u666F/\u8A0E\u8AD6\u7248.unity"
+    guid: 14d56c27d6fa3dc419627d4fb32bd082
+  - enabled: 1
+    path: "Assets/Scenes/\u5BE6\u969B\u4F7F\u7528\u5834\u666F/\u8B8A\u66F4\u5BC6\u78BC.unity"
+    guid: 4a134409a4ceb54478ee46ef816dc76c
   m_configObjects: {}

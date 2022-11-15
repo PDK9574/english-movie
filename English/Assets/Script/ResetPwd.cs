@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
-using UnityEngine.SceneManagement;
 using System.Security.Cryptography;
+using UnityEngine.SceneManagement;
+// using System.Security.Cryptography;
 using Assets;
 using System;
 using UnityEngine.UI;
@@ -17,16 +18,59 @@ public class ResetPwd : MonoBehaviour
     SqlAccess sql;
     public Text infoMsg;
     public InputField email;
+    public InputField old_pwd;
+    public InputField new_pwd1;
+    public InputField new_pwd2;
 
     // Start is called before the first frame update
+
     void Start()
     {
         Debug.Log("HELLO");
-        
+
+    }
+    public void change_Password()
+    {
+        int nInt = PlayerPrefs.GetInt("ID");
+        SHA256 sha256 = new SHA256CryptoServiceProvider();
+        string old_pwdSha256 = Convert.ToBase64String(sha256.ComputeHash(Encoding.Default.GetBytes(old_pwd.text)));
+        string new_pwdSha256 = Convert.ToBase64String(sha256.ComputeHash(Encoding.Default.GetBytes(new_pwd1.text)));
+        sql = new SqlAccess();
+
+        if (old_pwd.text != null)
+        {
+            DataSet ds = sql.QuerySet("Select * from user where id ='" + nInt + "' and password ='" + old_pwdSha256 + "'");
+            DataTable table = ds.Tables[0];
+            Debug.Log(nInt);
+            Debug.Log(old_pwdSha256);
+            Debug.Log(table.Rows.Count);
+            if (table.Rows.Count > 0)
+            {
+                if (new_pwd1.text == new_pwd2.text)
+                {
+                    sql.UpdateInto("english.user", new string[] { "password" }, new string[] { new_pwdSha256 }, "id", nInt.ToString());
+                    infoMsg.text = "變更密碼成功";
+
+                    PlayerPrefs.DeleteKey("ID");
+                    PlayerPrefs.DeleteKey("username");
+                    SceneManager.LoadScene("login");
+                }
+                else
+                {
+                    infoMsg.text = "新密碼不一致!";
+                }
+            }
+            else
+            {
+                infoMsg.text = "舊密碼錯誤";
+            }
+        }
+        sql.Close();
+
     }
     public void Reset_Password()
     {
-        string default_password="6c7nGrky/ehjM40Ivk3p3+OeoEm9r7NCzmWexUULaa4=";//預設為abcd1234
+        string default_password = "6c7nGrky/ehjM40Ivk3p3+OeoEm9r7NCzmWexUULaa4=";//預設為abcd1234
         sql = new SqlAccess();
         DataSet ds = sql.QuerySet("Select * from english.user where email='" + email.text + "'");
         DataTable table = ds.Tables[0];
@@ -34,12 +78,12 @@ public class ResetPwd : MonoBehaviour
         {
             sql.UpdateInto("english.user", new string[] { "password" }, new string[] { default_password }, "email", email.text);
             EmailAction();
-            Debug.Log("已重設密碼");           
+            Debug.Log("已重設密碼");
         }
         else
         {
             Debug.Log("找不到此信箱!");
-            infoMsg.text="找不到此信箱!";
+            infoMsg.text = "找不到此信箱!";
         }
 
         sql.Close();
@@ -75,9 +119,10 @@ public class ResetPwd : MonoBehaviour
         smtpClient.Send(mailMessage);
 
         Debug.Log("寄信完成！！");
-        infoMsg.text="已重設密碼，請至信箱查看!";
+        infoMsg.text = "已重設密碼，請至信箱查看!";
     }
-    public void backMenu(){
+    public void backMenu()
+    {
         SceneManager.LoadScene("首頁");
     }
 }
