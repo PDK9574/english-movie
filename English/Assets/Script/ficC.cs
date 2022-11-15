@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 
-public class loveC : MonoBehaviour
+public class ficC : MonoBehaviour
 {
     private RawImage image;
     private List<UniGif.GifTexture> textureList;
@@ -13,7 +13,7 @@ public class loveC : MonoBehaviour
     {
         image = GetComponent<RawImage>();
 
-        string filePath = Application.dataPath + "/loveAni.gif";
+        string filePath = Application.dataPath + "/image/ficAni.gif";
         Stream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
         byte[] bytes = new byte[stream.Length];
         stream.Read(bytes, 0, (int)stream.Length);// READING
