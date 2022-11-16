@@ -22,6 +22,7 @@ public class BackGroundBTN : MonoBehaviour
     // Update is called once per frame
     public void Start()
     {
+        
         imageNumber = PlayerPrefs.GetInt("imageNumber",1);
 
         if (imageNumber == 1)
@@ -44,8 +45,8 @@ public class BackGroundBTN : MonoBehaviour
     public void SetImage()
     {
 
-      
-            
+
+        Debug.Log("A");
             imageNumber ++;
       
 

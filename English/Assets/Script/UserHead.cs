@@ -15,7 +15,7 @@ public class UserHead : MonoBehaviour
 
     public void Start()
     {
-        imageNumber = PlayerPrefs.GetInt("imageNumber", 1);
+        imageNumber = PlayerPrefs.GetInt("HeadimageNumber", 1);
 
         if (imageNumber == 1)
             original.sprite = newSprite;
@@ -43,7 +43,7 @@ public class UserHead : MonoBehaviour
         imageNumber++;
 
 
-        PlayerPrefs.SetInt("imageNumber", imageNumber);
+        PlayerPrefs.SetInt("HeadimageNumber", imageNumber);
 
 
         if (imageNumber == 1)
