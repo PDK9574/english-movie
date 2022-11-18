@@ -16,18 +16,12 @@ public class UserHead : MonoBehaviour
     public void Start()
     {
         imageNumber = PlayerPrefs.GetInt("HeadimageNumber", 1);
-
         if (imageNumber == 1)
             original.sprite = newSprite;
-
         if (imageNumber == 2)
             original.sprite = newSprite2;
-
         if (imageNumber == 3)
-
             original.sprite = newSprite3;
-
-
         if (imageNumber == 4)
         {
             original.sprite = newSprite4;
@@ -37,34 +31,18 @@ public class UserHead : MonoBehaviour
 
     public void SetImage()
     {
-
-
-
         imageNumber++;
-
-
         PlayerPrefs.SetInt("HeadimageNumber", imageNumber);
-
-
         if (imageNumber == 1)
             original.sprite = newSprite;
-
         if (imageNumber == 2)
             original.sprite = newSprite2;
-
         if (imageNumber == 3)
-
             original.sprite = newSprite3;
-
-
         if (imageNumber == 4)
         {
             original.sprite = newSprite4;
             imageNumber = 0;
         }
-
     }
-
-
-
 }
