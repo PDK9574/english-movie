@@ -112,6 +112,7 @@ public class UI_list : MonoBehaviour
             {
                 DataSet ds = sql.QuerySet("insert into favorite(userid,favoriteid) VALUES (" + PlayerPrefs.GetInt("ID") + "," + movieid + ")");
                 Debug.Log("收藏成功");
+                
             }
         }
     }
