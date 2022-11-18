@@ -18,11 +18,15 @@ public static class ButtonExtension
         });
     }
 }
+
 public class UI_list : MonoBehaviour
 {
+    public GameObject 收藏成功;
+    public GameObject 取消收藏;
     public int movietype_id;
     public Text movieDetail;
     public int movieid;
+    
     //5種排列順序:預設、A-Z、Z-A、新到舊、舊到新
     //string def = "SELECT ch_movie_name,sentence,chinese,a.id,lastupdatetime FROM english.moviesentence as a join english.movie as b on a.movie_id=b.id where movietype_id=" + movietype_id;
     // Start is called before the first frame update
@@ -68,15 +72,29 @@ public class UI_list : MonoBehaviour
         {
             if (Convert.ToInt32(ds1.Tables[0].Rows[0][0]) > 0)
             {
-                Debug.Log("你已收藏");
+                DataSet ds = sql.QuerySet("DELETE FROM favorite where userid ='" + PlayerPrefs.GetInt("ID") +"' and favoriteid ='" + movieid + "'");
+                取消收藏.SetActive(true);
+                Invoke("ShowUnFavorImg", 1.0f);
+                Debug.Log("取消收藏");
+
             }
             else
             {
                 DataSet ds = sql.QuerySet("insert into favorite(userid,favoriteid) VALUES (" + PlayerPrefs.GetInt("ID") + "," + movieid + ")");
+                收藏成功.SetActive(true);
+                Invoke("ShowFavorImg", 1.0f);
                 Debug.Log("收藏成功");
                 
             }
         }
+    }
+    void ShowFavorImg()
+    {
+        收藏成功.SetActive(false);
+    }
+    void ShowUnFavorImg()
+    {
+        取消收藏.SetActive(false);
     }
     void showSentence()
     {
