@@ -2012,6 +2012,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
       value: SetActive
       objectReference: {fileID: 0}
+    - target: {fileID: 8594852606885406690, guid: ab18faded7f455646bf008da2b5c08e2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8743431187262612391, guid: ab18faded7f455646bf008da2b5c08e2,
         type: 3}
       propertyPath: movieDetail
