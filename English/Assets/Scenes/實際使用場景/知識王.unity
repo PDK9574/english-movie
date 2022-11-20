@@ -1511,7 +1511,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1482487713, guid: 9d0114b6129035e49a9a571b1cce1f69, type: 3}
       propertyPath: m_Options.m_Options.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1482487713, guid: 9d0114b6129035e49a9a571b1cce1f69, type: 3}
       propertyPath: m_Options.m_Options.Array.data[2].m_Text
