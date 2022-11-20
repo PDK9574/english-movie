@@ -12,7 +12,6 @@ public class corG : MonoBehaviour
     void Start()
     {
         image = GetComponent<RawImage>();
-
         string filePath = Application.dataPath + "/image/bingos.gif";
         Stream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
         byte[] bytes = new byte[stream.Length];
@@ -35,7 +34,6 @@ public class corG : MonoBehaviour
         if (index == -1)
         {
             return;
-
         }
         //show pic
         timer += Time.deltaTime;

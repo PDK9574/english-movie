@@ -449,7 +449,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &348881268
 RectTransform:
   m_ObjectHideFlags: 0
@@ -462,12 +462,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1942463124}
-  m_RootOrder: 2
+  m_RootOrder: 9
+>>>>>>> parent of ac582bb (科幻q版人物code)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 148, y: -524}
-  m_SizeDelta: {x: 697, y: 530}
+  m_AnchoredPosition: {x: -3.11438, y: -467.57}
+  m_SizeDelta: {x: 643.9786, y: 643.9786}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &348881269
 MonoBehaviour:
@@ -489,7 +490,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 2f124b1782e25a14aa0f8d3f34ceba4f, type: 3}
+  m_Texture: {fileID: 0}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -542,7 +543,7 @@ RectTransform:
   m_Children:
   - {fileID: 1858963655}
   m_Father: {fileID: 1942463124}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -790,7 +791,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1942463124}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1121,7 +1122,7 @@ RectTransform:
   m_Children:
   - {fileID: 896178279}
   m_Father: {fileID: 1942463124}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2167,7 +2168,8 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1681907306}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1739793435
+--- !u!1 &1686086703
+>>>>>>> parent of ac582bb (科幻q版人物code)
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2175,83 +2177,126 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1739793436}
-  - component: {fileID: 1739793439}
-  - component: {fileID: 1739793438}
-  - component: {fileID: 1739793437}
+  - component: {fileID: 1686086704}
+  - component: {fileID: 1686086708}
+  - component: {fileID: 1686086707}
+  - component: {fileID: 1686086706}
+  - component: {fileID: 1686086705}
   m_Layer: 5
-  m_Name: RawImage
+  m_Name: "\u6372\u52D5panel"
+>>>>>>> parent of ac582bb (科幻q版人物code)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1739793436
+
+  m_IsActive: 1
+--- !u!224 &1686086704
+>>>>>>> parent of ac582bb (科幻q版人物code)
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1739793435}
+  m_GameObject: {fileID: 1686086703}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 170935551}
   m_Father: {fileID: 1942463124}
-  m_RootOrder: 6
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 227.99998, y: -524}
-  m_SizeDelta: {x: 697, y: 530}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -16.799011, y: -119.2041}
+  m_SizeDelta: {x: -191.48, y: -1059.2877}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1739793437
+--- !u!114 &1686086705
+>>>>>>> parent of ac582bb (科幻q版人物code)
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1739793435}
+  m_GameObject: {fileID: 1686086703}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Content: {fileID: 170935551}
+  m_Horizontal: 0
+  m_Vertical: 1
+  m_MovementType: 1
+  m_Elasticity: 0.1
+  m_Inertia: 1
+  m_DecelerationRate: 0.135
+  m_ScrollSensitivity: 30
+  m_Viewport: {fileID: 0}
+  m_HorizontalScrollbar: {fileID: 0}
+  m_VerticalScrollbar: {fileID: 759166497}
+  m_HorizontalScrollbarVisibility: 0
+  m_VerticalScrollbarVisibility: 0
+  m_HorizontalScrollbarSpacing: 0
+  m_VerticalScrollbarSpacing: 0
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1686086706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686086703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 1
+--- !u!114 &1686086707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686086703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.77254903}
+>>>>>>> parent of ac582bb (科幻q版人物code)
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 2f124b1782e25a14aa0f8d3f34ceba4f, type: 3}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
---- !u!222 &1739793438
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1686086708
+>>>>>>> parent of ac582bb (科幻q版人物code)
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1739793435}
+  m_GameObject: {fileID: 1686086703}
   m_CullTransparentMesh: 1
---- !u!114 &1739793439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1739793435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 607f855ac947eab418e3a97584a2f193, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+>>>>>>> parent of ac582bb (科幻q版人物code)
 --- !u!1 &1741303923
 GameObject:
   m_ObjectHideFlags: 0
@@ -2828,10 +2873,12 @@ RectTransform:
   - {fileID: 716384118}
   - {fileID: 1358990428}
   - {fileID: 1002342433}
-  - {fileID: 1739793436}
+
+>>>>>>> parent of ac582bb (科幻q版人物code)
   - {fileID: 665044100}
   - {fileID: 967387429}
   - {fileID: 388520073}
+  - {fileID: 348881268}
   - {fileID: 1681907307}
   - {fileID: 1186645767}
   - {fileID: 370638287}
