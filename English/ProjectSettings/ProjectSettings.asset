@@ -241,7 +241,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 1
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: D:/user-data/Document/englishkey.keystore
+  AndroidKeystoreName: C:/Users/user/Desktop/english project/keystore/englishkey.keystore
   AndroidKeyaliasName: english
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
