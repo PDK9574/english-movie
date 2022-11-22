@@ -11,7 +11,6 @@ public class Knowledge : MonoBehaviour
 {
     public Text textrank;
     public Text textshow;
-    public Text textyes;
     public InputField InputFieldans;
     public GameObject rawimage;
     public GameObject rawimage2;
@@ -20,26 +19,15 @@ public class Knowledge : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
-        SqlAccess sql = new SqlAccess();
-        DataSet ds4 = sql.QuerySet("SELECT username,point FROM english.user  where point != 0 order by point desc limit 3");
-        SqlAccess.LogDatatable(ds4);
-        int point;
-        String name;
-        for (int a = 0; a < ds4.Tables[0].Rows.Count; a++)
-        {
-            string poin=" ";
-            poin = ds4.Tables[0].Rows[a][1].ToString();
-            point = Int32.Parse(poin);
-            name = ds4.Tables[0].Rows[a][0].ToString();
-            textrank.text+="¥Î¤á" + name + "¦³" + point + "ÂI\n";
-        }
+        leaderboard();
+        Show();
     }
 
     public void Show()
     {
         System.Random random = new System.Random();
         intNowRandomNum = 0;
-        intNowRandomNum = random.Next(300);
+        intNowRandomNum = random.Next(100);
         SqlAccess sql = new SqlAccess();
         DataSet ds = sql.QuerySet("SELECT sentence FROM english.moviesentence  where id='" + intNowRandomNum + "'");
         DataSet dsa = sql.QuerySet("SELECT chinese FROM english.moviesentence  where id='" + intNowRandomNum + "'");
@@ -63,8 +51,7 @@ public class Knowledge : MonoBehaviour
                     k += single[s] + " ";
             }
         }
-        textshow.text = k + sg + intNowRandomNum;
-
+        textshow.text = k + sg;
         rawimage2.SetActive(false);
         rawimage.SetActive(false);
 
@@ -80,14 +67,12 @@ public class Knowledge : MonoBehaviour
         {
             if (enter == single)
             {
-                textyes.text = "®¥³ßµª¹ï";
                 DataSet ds2 = sql.QuerySet("UPDATE user SET point=point+1 WHERE id='" + PlayerPrefs.GetInt("ID") + "'");
                 rawimage.SetActive(true);
                 rawimage2.SetActive(false);
 
             }
             else {
-                textyes.text = "µª¿ù¤F";
                 rawimage2.SetActive(true);
                 rawimage.SetActive(false);
             }
@@ -107,12 +92,24 @@ public class Knowledge : MonoBehaviour
             poin = ds4.Tables[0].Rows[a][1].ToString();
             point = Int32.Parse(poin);
             name = ds4.Tables[0].Rows[a][0].ToString();
-            textrank.text += "¥Î¤á" + name + "¦³" + point + "ÂI\n";
+            textrank.text += "ç”¨æˆ¶" + name + "æœ‰" + point + "é»ž\n";
         }
     }
     // Update is called once per frame
-    void Update()
-    {
-
+    public void leaderboard(){
+        textrank.text="";
+        SqlAccess sql = new SqlAccess();
+        DataSet ds4 = sql.QuerySet("SELECT username,point FROM english.user  where point != 0 order by point desc limit 5");
+        SqlAccess.LogDatatable(ds4);
+        int point;
+        String name;
+        for (int a = 0; a < ds4.Tables[0].Rows.Count; a++)
+        {
+            string poin=" ";
+            poin = ds4.Tables[0].Rows[a][1].ToString();
+            point = Int32.Parse(poin);
+            name = ds4.Tables[0].Rows[a][0].ToString();
+            textrank.text+="ç”¨æˆ¶" + name + "æœ‰" + point + "é»ž\n";
+        }
     }
 }
