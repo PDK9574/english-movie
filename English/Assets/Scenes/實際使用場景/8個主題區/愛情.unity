@@ -482,7 +482,7 @@ PrefabInstance:
     - target: {fileID: 8743431187262612391, guid: ab18faded7f455646bf008da2b5c08e2,
         type: 3}
       propertyPath: movietype_id
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8743431187262612391, guid: ab18faded7f455646bf008da2b5c08e2,
         type: 3}
