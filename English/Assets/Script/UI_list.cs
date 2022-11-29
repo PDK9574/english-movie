@@ -117,7 +117,7 @@ public class UI_list : MonoBehaviour
                     g = Instantiate(金句, transform);
                     g.transform.GetChild(0).GetComponent<Text>().text = En;//英文
                     g.transform.GetChild(1).GetComponent<Text>().text = Ch;//中文
-                    g.transform.GetChild(2).GetComponent<Text>().text = "《" + Name + Movieid + "》";//電影名稱
+                    g.transform.GetChild(2).GetComponent<Text>().text = "《" + Name + "》";//電影名稱
                     g.GetComponent<Button>().AddEventListener(i, Detail);
                 }
                 // Destroy(金句);
