@@ -552,6 +552,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infoMsg: {fileID: 0}
   email: {fileID: 362972581}
+  old_pwd: {fileID: 0}
+  new_pwd1: {fileID: 0}
+  new_pwd2: {fileID: 0}
 --- !u!1 &1096264697
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,7 +824,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u8ACB\u8F38\u5165\u8A3B\u518Aemial"
+  m_Text: "\u8ACB\u8F38\u5165\u8A3B\u518Aemail"
 --- !u!222 &1183808891
 CanvasRenderer:
   m_ObjectHideFlags: 0

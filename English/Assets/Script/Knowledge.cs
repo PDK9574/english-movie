@@ -27,7 +27,7 @@ public class Knowledge : MonoBehaviour
     {
         System.Random random = new System.Random();
         intNowRandomNum = 0;
-        intNowRandomNum = random.Next(100);
+        intNowRandomNum = random.Next(10);
         SqlAccess sql = new SqlAccess();
         DataSet ds = sql.QuerySet("SELECT sentence FROM english.moviesentence  where id='" + intNowRandomNum + "'");
         DataSet dsa = sql.QuerySet("SELECT chinese FROM english.moviesentence  where id='" + intNowRandomNum + "'");
@@ -54,6 +54,8 @@ public class Knowledge : MonoBehaviour
         textshow.text = k + sg;
         rawimage2.SetActive(false);
         rawimage.SetActive(false);
+        InputFieldans.text="";
+        Debug.Log(intNowRandomNum);
 
     }
     public void Ans()
