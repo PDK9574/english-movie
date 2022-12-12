@@ -13,6 +13,7 @@ public class InsertSentence : MonoBehaviour
     public Dropdown 類型;
     public InputField 句子時間;
     public Text 提示文字;
+    public GameObject 審核;
      public void Start()
     {
         //Adds a listener to the main input field and invokes a method when the value changes.
@@ -53,6 +54,7 @@ public class InsertSentence : MonoBehaviour
             sql.InsertInto("usercreate",new string [] {"sentence","chinese","moviename","movietype","time","uploadTime","create_id"},
             new string[] {句子.text,中文.text,電影名.text,類型.options[類型.value].text,句子時間.text,SqlAccess.DateTimeNormalize(DateTime.Now) ,PlayerPrefs.GetInt("ID").ToString()});
             Debug.Log("新增成功");
+            審核.SetActive(true);
         }else{
             提示文字.text ="類型錯誤";
             Debug.Log("類型錯誤");

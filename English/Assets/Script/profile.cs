@@ -114,6 +114,11 @@ void Start()
             avatar.SetNativeSize();
         }
     }
+
+public void ContactMe(){
+    Application.OpenURL("mailto:brian2003.tw@gmail.com");
+ }
+
     public void checkLogin(){
         if( PlayerPrefs.GetInt("ID")==0 ){
             SceneManager.LoadScene("login");
