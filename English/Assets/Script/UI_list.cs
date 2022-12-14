@@ -40,7 +40,7 @@ public class UI_list : MonoBehaviour
     {
         SqlAccess sql = new SqlAccess();
         // "SELECT ch_movie_name,sentence,chinese,a.id,lastupdatetime  FROM english.moviesentence as a join english.movie as b on a.movie_id=b.id where movietype_id='" + movietype_id + "'"
-        DataSet ds = sql.QuerySet("SELECT ch_movie_name,sentence,chinese,a.id,lastupdatetime FROM english.moviesentence as a join english.movie as b on a.movie_id=b.id where movietype_id=" + movietype_id);
+        DataSet ds = sql.QuerySet("SELECT ch_movie_name,sentence,chinese,b.id,lastupdatetime FROM english.moviesentence as a join english.movie as b on a.movie_id=b.id where movietype_id=" + movietype_id);
 
         movieDetail.text = ds.Tables[0].Rows[itemIndex][1].ToString() + "\n\n" + ds.Tables[0].Rows[itemIndex][2].ToString() + "\n\n《" + ds.Tables[0].Rows[itemIndex][0].ToString() + "》";
         movieid = Convert.ToInt32(ds.Tables[0].Rows[itemIndex][3]);

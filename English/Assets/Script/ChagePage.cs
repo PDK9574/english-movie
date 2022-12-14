@@ -17,9 +17,11 @@ public class ChagePage : MonoBehaviour
     /// </summary>
     public void chagePageAndSet(){
         if(searchField.text.Length != 0){
+            searchField.text=searchField.text.Replace(" ","");
             PlayerPrefs.SetString("Search",searchField.text);
             PlayerPrefs.SetInt("Searchtype",searchtype.value);
             SceneManager.LoadScene(pageName);
+            
         }
     }
 
