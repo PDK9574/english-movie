@@ -22,6 +22,7 @@ public class Search : MonoBehaviour
         //搜尋字典
         if (searchtype == 1)
         {
+            gameObject.GetComponent<InputField>().placeholder.GetComponent<Text>().text = "字典搜尋";
             //不顯示金句
             sentence.SetActive(false);
             scrollbar.SetActive(false);
@@ -45,7 +46,7 @@ public class Search : MonoBehaviour
         }
         else if (searchtype == 0)
         {
-
+gameObject.GetComponent<InputField>().placeholder.GetComponent<Text>().text = "金句搜尋";
             //不顯示字典
             dicitonaryshow.SetActive(false);
             GameObject 金句 = transform.GetChild(0).gameObject;

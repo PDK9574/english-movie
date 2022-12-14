@@ -55,7 +55,6 @@ public class Knowledge : MonoBehaviour
         rawimage2.SetActive(false);
         rawimage.SetActive(false);
         InputFieldans.text="";
-        Debug.Log(intNowRandomNum);
 
     }
     public void Ans()
@@ -72,18 +71,19 @@ public class Knowledge : MonoBehaviour
                 DataSet ds2 = sql.QuerySet("UPDATE user SET point=point+1 WHERE id='" + PlayerPrefs.GetInt("ID") + "'");
                 rawimage.SetActive(true);
                 rawimage2.SetActive(false);
-
+                leaderboard();
             }
             else {
                 rawimage2.SetActive(true);
                 rawimage.SetActive(false);
             }
         }
+        InputFieldans.text="";
     }
     public void enter()
     {
         SqlAccess sql = new SqlAccess();
-        DataSet ds4 = sql.QuerySet("SELECT username,point FROM english.user  where point != 0 order by point desc limit 3 ");
+        DataSet ds4 = sql.QuerySet("SELECT username,point FROM english.user  where point != 0 order by point desc limit 5 ");
         SqlAccess.LogDatatable(ds4);
         int point;
         String name;
