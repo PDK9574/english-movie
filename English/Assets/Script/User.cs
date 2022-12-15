@@ -6,6 +6,9 @@ using System;
 using UnityEngine.UI;
 using System.Text;
 using System.Data;
+using System.Net;
+using System.Net.Mail;
+
 
 public class User : MonoBehaviour
 {
@@ -40,6 +43,7 @@ public class User : MonoBehaviour
                 {
                     sql.InsertInto("user", new string[] { "username", "password", "email", "createTime" }, new string[] { username.text, resultSha256, email.text, regDate });
                     loginMsg.text = "註冊成功";
+                    EmailAction("MovieFun註冊成功通知","親愛的"+username.text+"您好!"+"\n"+"歡迎加入MovieFun，您的帳戶已準備就緒，可以完整體驗MovieFun系統了!");
                 }
                 else
                 {
@@ -139,6 +143,38 @@ public class User : MonoBehaviour
         }
         // int nInt = PlayerPrefs.GetInt("ID");
         // string sString = PlayerPrefs.GetString("username");
+    }
+    public void EmailAction(string title,string body)   //寄信
+    {
+        string regDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        MailMessage mailMessage = new MailMessage();
+        SmtpClient smtpClient = new SmtpClient("smtp.gmail.com");
+        Attachment attachment = new Attachment(@"Assets/image/Capoo.gif");    //指定要夾帶的物件路徑
+
+        mailMessage.From = new MailAddress("brian2003.tw@gmail.com", "MovieFun系統", System.Text.Encoding.UTF8);
+        mailMessage.To.Add(email.text);
+        mailMessage.Subject = title;
+        mailMessage.Body = body + "\n\n" + regDate;
+        mailMessage.SubjectEncoding = System.Text.Encoding.UTF8;
+        mailMessage.BodyEncoding = System.Text.Encoding.UTF8;
+        // mailMessage.Attachments.Add(attachment);
+        mailMessage.Priority = MailPriority.High;
+
+        smtpClient.Port = 587;
+        smtpClient.Credentials = new System.Net.NetworkCredential("brian2003.tw@gmail.com", "iwbzlaqwsldvqref") as ICredentialsByHost;
+        smtpClient.EnableSsl = true;
+
+        ServicePointManager.ServerCertificateValidationCallback = delegate (object sender,
+                                        System.Security.Cryptography.X509Certificates.X509Certificate certificate,
+                                        System.Security.Cryptography.X509Certificates.X509Chain chain,
+                                        System.Net.Security.SslPolicyErrors sslPolicyErrors)
+                                        {
+                                            return true;
+                                        };
+
+        smtpClient.Send(mailMessage);
+
+        Debug.Log("寄信完成！！");
     }
 
 }
