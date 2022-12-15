@@ -56,7 +56,7 @@ public class UI_list : MonoBehaviour
             sql.QuerySet("INSERT INTO `english`.`hotmv` (`views`,`movieid`, `lastupdateTime`) VALUES ('1','" + movieid + "', '2022-06-06 11:41:37');");
             Debug.Log("電影id" + movieid + "資料觀看次數新增");
         }
-
+        sql.Close();
 
     }
     /// <summary>
@@ -87,6 +87,7 @@ public class UI_list : MonoBehaviour
                 
             }
         }
+        sql.Close();
     }
     void ShowFavorImg()
     {
@@ -126,6 +127,7 @@ public class UI_list : MonoBehaviour
 
             }
         }
+        sql.Close();
     }
     void clear()
     {

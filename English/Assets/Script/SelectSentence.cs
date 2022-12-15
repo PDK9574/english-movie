@@ -18,6 +18,7 @@ public class SelectSentence : MonoBehaviour
         DataSet ds=sql.QuerySet("SELECT sentence FROM english.moviesentence  where id='"+"8"+"'");
         SqlAccess.LogDatatable(ds);
         showText.text=ds.Tables[0].Rows[0][0].ToString();
+        sql.Close();
     }
     // Update is called once per frame
     void Update()
