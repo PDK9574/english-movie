@@ -34,6 +34,7 @@ public class Chart : MonoBehaviour
         //     chart = gameObject.AddComponent<BarChart>();
         //     chart.Init();
         // } 
+        sql.Close();
     }
     // Update is called once per frame
     public void Click2(){
@@ -47,6 +48,6 @@ public class Chart : MonoBehaviour
         {
             shtext.text+="電影類型名:" +ds.Tables[0].Rows[i][0] + "有"+ds.Tables[0].Rows[i][1]  +"次觀看數\n";
         }
-        
+        sql.Close();
     }
 }

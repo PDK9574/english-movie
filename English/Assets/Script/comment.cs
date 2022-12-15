@@ -28,6 +28,7 @@ public class comment : MonoBehaviour
         sql.InsertInto("comment", new string[] { "text", "lastupdateTime", "authorid","c_type" }, new string[] { messagebox.text, Date, PlayerPrefs.GetInt("ID").ToString(),"sentence" });
         sentence();
         messagebox.text="";//送出留言後，清空輸入欄
+        sql.Close();
     }
     public void send_other()
     {
@@ -37,7 +38,7 @@ public class comment : MonoBehaviour
         sql.InsertInto("comment", new string[] { "text", "lastupdateTime", "authorid","c_type"  }, new string[] { messagebox.text, Date, PlayerPrefs.GetInt("ID").ToString(),"other" });
         other();
         messagebox.text="";//送出留言後，清空輸入欄
-        
+        sql.Close();
     }
 
     public void sentence() {
@@ -58,6 +59,7 @@ public class comment : MonoBehaviour
             date = dt.ToString("yyyy/MM/dd");
             showmessage.text += "用戶 "+author + " 說 " + comment + " (" + date + ")\n";
         }
+        sql.Close();
     }
     public void other(){
         sql = new SqlAccess();
@@ -77,6 +79,7 @@ public class comment : MonoBehaviour
             date = dt.ToString("yyyy/MM/dd");
             showmessage.text += "用戶 "+author + " 說 " + comment + " (" + date + ")\n";
         }
+        sql.Close();
     }
 
     public void checkLogin(){

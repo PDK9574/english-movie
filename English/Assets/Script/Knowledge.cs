@@ -18,7 +18,7 @@ public class Knowledge : MonoBehaviour
     public static int intNowRandomNum = 0;
     // Start is called before the first frame update
     void Start()
-    {   
+    {
         leaderboard();
         Show();
     }
@@ -54,9 +54,8 @@ public class Knowledge : MonoBehaviour
         textshow.text = k + sg;
         rawimage2.SetActive(false);
         rawimage.SetActive(false);
-        InputFieldans.text="";
-        Debug.Log(intNowRandomNum);
-
+        InputFieldans.text = "";
+        sql.Close();
     }
     public void Ans()
     {
@@ -72,18 +71,25 @@ public class Knowledge : MonoBehaviour
                 DataSet ds2 = sql.QuerySet("UPDATE user SET point=point+1 WHERE id='" + PlayerPrefs.GetInt("ID") + "'");
                 rawimage.SetActive(true);
                 rawimage2.SetActive(false);
-
+                leaderboard();
+                sql.Close();
             }
-            else {
+            else
+            {
+                Debug.Log("答錯了!");
                 rawimage2.SetActive(true);
                 rawimage.SetActive(false);
+                sql.Close();
             }
         }
+        InputFieldans.text = "";
+        
+        sql.Close();
     }
     public void enter()
     {
         SqlAccess sql = new SqlAccess();
-        DataSet ds4 = sql.QuerySet("SELECT username,point FROM english.user  where point != 0 order by point desc limit 3 ");
+        DataSet ds4 = sql.QuerySet("SELECT username,point FROM english.user  where point != 0 order by point desc limit 5 ");
         SqlAccess.LogDatatable(ds4);
         int point;
         String name;
@@ -96,10 +102,12 @@ public class Knowledge : MonoBehaviour
             name = ds4.Tables[0].Rows[a][0].ToString();
             textrank.text += "用戶" + name + "有" + point + "點\n";
         }
+        sql.Close();
     }
     // Update is called once per frame
-    public void leaderboard(){
-        textrank.text="";
+    public void leaderboard()
+    {
+        textrank.text = "";
         SqlAccess sql = new SqlAccess();
         DataSet ds4 = sql.QuerySet("SELECT username,point FROM english.user  where point != 0 order by point desc limit 5");
         SqlAccess.LogDatatable(ds4);
@@ -107,11 +115,12 @@ public class Knowledge : MonoBehaviour
         String name;
         for (int a = 0; a < ds4.Tables[0].Rows.Count; a++)
         {
-            string poin=" ";
+            string poin = " ";
             poin = ds4.Tables[0].Rows[a][1].ToString();
             point = Int32.Parse(poin);
             name = ds4.Tables[0].Rows[a][0].ToString();
-            textrank.text+="用戶" + name + "有" + point + "點\n";
+            textrank.text += "用戶" + name + "有" + point + "點\n";
         }
+        sql.Close();
     }
 }

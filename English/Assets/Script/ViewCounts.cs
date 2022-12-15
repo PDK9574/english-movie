@@ -16,6 +16,7 @@ public class ViewCounts : MonoBehaviour
         sql.QuerySet("UPDATE hotmvtype SET views=views+1 WHERE typeid='"+movietype_id+"'");
         Debug.Log("成功增加在電影類型"+movietype_id);
         yield return null;
+        sql.Close();
     }
    
 }

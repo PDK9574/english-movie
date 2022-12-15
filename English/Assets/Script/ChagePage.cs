@@ -21,7 +21,6 @@ public class ChagePage : MonoBehaviour
             PlayerPrefs.SetString("Search",searchField.text);
             PlayerPrefs.SetInt("Searchtype",searchtype.value);
             SceneManager.LoadScene(pageName);
-            
         }
     }
 

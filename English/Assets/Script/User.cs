@@ -96,7 +96,7 @@ public class User : MonoBehaviour
             }
             sql.Close();
         }
-       
+       sql.Close();
     }
 
     public static bool isLogin()

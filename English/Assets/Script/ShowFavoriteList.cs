@@ -33,6 +33,7 @@ public class ShowFavoriteList : MonoBehaviour
                 Destroy(收藏句子);
             }
         }
+        sql.Close();
     }
     // 收藏句子顯示
     public void Show(){

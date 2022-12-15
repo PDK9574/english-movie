@@ -1,9 +1,9 @@
 {
-    "m_SelectedDeviceId": "",
+    "m_SelectedDeviceId": "R5CR910ZZJA",
     "m_SelectedPackage": {
-        "deviceId": "91247d03",
+        "deviceId": "R5CR910ZZJA",
         "name": "com.SchoolCompany.English",
-        "processId": 22955,
+        "processId": 5287,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -12,6 +12,30 @@
             "deviceId": "91247d03",
             "name": "com.SchoolCompany.English",
             "processId": 22955,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR910ZZJA",
+            "name": "com.android.settings",
+            "processId": 8579,
+            "exited": true
+        },
+        {
+            "deviceId": "R5CR910ZZJA",
+            "name": "com.SchoolCompany.English",
+            "processId": 28794,
+            "exited": true
+        },
+        {
+            "deviceId": "R5CR910ZZJA",
+            "name": "com.sec.android.app.launcher",
+            "processId": 2785,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CR910ZZJA",
+            "name": "com.SchoolCompany.English",
+            "processId": 5287,
             "exited": false
         }
     ],
@@ -48,9 +72,20 @@
         ]
     },
     "m_MemoryViewerState": {
-        "MemoryWindowHeight": 0.0,
-        "MemoryWindowWidth": 0.0,
-        "MemoryTypeEnabled": [],
+        "MemoryWindowHeight": 300.0,
+        "MemoryWindowWidth": 170.0,
+        "MemoryTypeEnabled": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
         "MemoryGroup": 2,
         "Behavior": 0
     },

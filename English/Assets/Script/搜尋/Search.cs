@@ -45,7 +45,6 @@ public class Search : MonoBehaviour
         }
         else if (searchtype == 0)
         {
-
             //不顯示字典
             dicitonaryshow.SetActive(false);
             GameObject 金句 = transform.GetChild(0).gameObject;
@@ -70,9 +69,12 @@ public class Search : MonoBehaviour
                     }
                     Destroy(金句);
                 }
+                
             }
+            sql.Close();
 
         }
+        
     }
     public void Detail(int itemIndex)
     {
@@ -80,7 +82,7 @@ public class Search : MonoBehaviour
         SqlAccess sql = new SqlAccess();
         DataSet ds = sql.QuerySet("SELECT ms.sentence, ms.chinese,m.ch_movie_name FROM english.moviesentence ms JOIN english.movie m ON ms.movie_id = m.id WHERE sentence LIKE '%" + english + "%'");
         movieDetail.text = ds.Tables[0].Rows[itemIndex][0].ToString() + "\n\n" + ds.Tables[0].Rows[itemIndex][1].ToString() + "\n\n《" + ds.Tables[0].Rows[itemIndex][2].ToString() + "》";
-        
+        sql.Close();
     }
 
 
