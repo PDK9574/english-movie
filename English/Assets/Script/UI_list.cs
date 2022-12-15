@@ -25,6 +25,7 @@ public class UI_list : MonoBehaviour
     public GameObject 取消收藏;
     public int movietype_id;
     public Text movieDetail;
+    public int sentenceid;
     public int movieid;
     
     //5種排列順序:預設、A-Z、Z-A、新到舊、舊到新
@@ -40,10 +41,11 @@ public class UI_list : MonoBehaviour
     {
         SqlAccess sql = new SqlAccess();
         // "SELECT ch_movie_name,sentence,chinese,a.id,lastupdatetime  FROM english.moviesentence as a join english.movie as b on a.movie_id=b.id where movietype_id='" + movietype_id + "'"
-        DataSet ds = sql.QuerySet("SELECT ch_movie_name,sentence,chinese,b.id,lastupdatetime FROM english.moviesentence as a join english.movie as b on a.movie_id=b.id where movietype_id=" + movietype_id);
+        DataSet ds = sql.QuerySet("SELECT ch_movie_name,sentence,chinese,a.id,b.id,lastupdatetime FROM english.moviesentence as a join english.movie as b on a.movie_id=b.id where movietype_id=" + movietype_id);
 
         movieDetail.text = ds.Tables[0].Rows[itemIndex][1].ToString() + "\n\n" + ds.Tables[0].Rows[itemIndex][2].ToString() + "\n\n《" + ds.Tables[0].Rows[itemIndex][0].ToString() + "》";
-        movieid = Convert.ToInt32(ds.Tables[0].Rows[itemIndex][3]);
+        sentenceid = Convert.ToInt32(ds.Tables[0].Rows[itemIndex][3]);
+        movieid = Convert.ToInt32(ds.Tables[0].Rows[itemIndex][4]);
         //紀錄觀看次數
         DataSet ds1 = sql.QuerySet("select count(*) from hotmv where movieid ='" + movieid + "'");
         if (Convert.ToInt32(ds1.Tables[0].Rows[0][0]) > 0)
@@ -65,14 +67,14 @@ public class UI_list : MonoBehaviour
     public void Favorite()
     {
         SqlAccess sql = new SqlAccess();
-        Debug.Log("現在頁面電影id" + movieid);
+        Debug.Log("現在頁面電影id" + sentenceid);
         Debug.Log("現在頁面使用者id" + PlayerPrefs.GetInt("ID"));
-        DataSet ds1 = sql.QuerySet("select count(*) from favorite where userid ='" + PlayerPrefs.GetInt("ID") + "' and favoriteid = '" + movieid + "'");
+        DataSet ds1 = sql.QuerySet("select count(*) from favorite where userid ='" + PlayerPrefs.GetInt("ID") + "' and favoriteid = '" + sentenceid + "'");
         if (User.isLogin())
         {
             if (Convert.ToInt32(ds1.Tables[0].Rows[0][0]) > 0)
             {
-                DataSet ds = sql.QuerySet("DELETE FROM favorite where userid ='" + PlayerPrefs.GetInt("ID") +"' and favoriteid ='" + movieid + "'");
+                DataSet ds = sql.QuerySet("DELETE FROM favorite where userid ='" + PlayerPrefs.GetInt("ID") +"' and favoriteid ='" + sentenceid + "'");
                 取消收藏.SetActive(true);
                 Invoke("ShowUnFavorImg", 1.0f);
                 Debug.Log("取消收藏");
@@ -80,7 +82,7 @@ public class UI_list : MonoBehaviour
             }
             else
             {
-                DataSet ds = sql.QuerySet("insert into favorite(userid,favoriteid) VALUES (" + PlayerPrefs.GetInt("ID") + "," + movieid + ")");
+                DataSet ds = sql.QuerySet("insert into favorite(userid,favoriteid) VALUES (" + PlayerPrefs.GetInt("ID") + "," + sentenceid + ")");
                 收藏成功.SetActive(true);
                 Invoke("ShowFavorImg", 1.0f);
                 Debug.Log("收藏成功");
