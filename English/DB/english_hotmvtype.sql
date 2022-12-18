@@ -30,16 +30,6 @@ CREATE TABLE `hotmvtype` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `hotmvtype`
---
-
-LOCK TABLES `hotmvtype` WRITE;
-/*!40000 ALTER TABLE `hotmvtype` DISABLE KEYS */;
-INSERT INTO `hotmvtype` VALUES (1,607,1,'2022-06-07 11:42:16'),(2,145,2,'2022-06-07 11:42:16'),(3,162,3,'2022-06-07 11:42:16'),(4,120,4,'2022-06-07 11:42:16'),(5,53,5,'2022-06-07 11:42:16'),(6,117,6,'2022-06-07 11:42:16'),(7,143,7,'2022-06-07 11:42:16'),(8,62,8,'2022-06-07 11:42:16');
-/*!40000 ALTER TABLE `hotmvtype` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -50,4 +40,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-18  0:17:07
+-- Dump completed on 2022-12-19  0:32:44

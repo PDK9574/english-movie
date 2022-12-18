@@ -16,6 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `moviesentence`
+--
+
+DROP TABLE IF EXISTS `moviesentence`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `moviesentence` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `sentence` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `chinese` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `special_text` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '特別的難的字，紅底特別標註',
+  `views` int DEFAULT NULL COMMENT '瀏覽量',
+  `movie_id` int DEFAULT NULL,
+  `create_id` int DEFAULT NULL COMMENT '作者',
+  `lastupdateTime` datetime DEFAULT NULL COMMENT '上次修改日期',
+  PRIMARY KEY (`id`),
+  KEY `fk_movieSentence_movieSentence_1` (`movie_id`),
+  KEY `fk_creat_id` (`create_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=563 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Dumping data for table `moviesentence`
 --
 
@@ -34,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-18 23:40:41
+-- Dump completed on 2022-12-19  0:32:13
