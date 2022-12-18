@@ -16,18 +16,14 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `movietype`
+-- Dumping data for table `movietype`
 --
 
-DROP TABLE IF EXISTS `movietype`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `movietype` (
-  `id` int NOT NULL,
-  `typename` varchar(45) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+LOCK TABLES `movietype` WRITE;
+/*!40000 ALTER TABLE `movietype` DISABLE KEYS */;
+INSERT INTO `movietype` VALUES (1,'動作'),(2,'動畫'),(3,'恐怖'),(4,'愛情'),(5,'科幻'),(6,'英雄'),(7,'驚悚/懸疑/推理'),(8,'勵志/人生');
+/*!40000 ALTER TABLE `movietype` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -38,4 +34,4 @@ CREATE TABLE `movietype` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-18  0:15:25
+-- Dump completed on 2022-12-18 23:40:43
