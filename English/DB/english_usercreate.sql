@@ -35,16 +35,6 @@ CREATE TABLE `usercreate` (
   KEY `fk_userCreate_userCreate_1` (`create_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `usercreate`
---
-
-LOCK TABLES `usercreate` WRITE;
-/*!40000 ALTER TABLE `usercreate` DISABLE KEYS */;
-INSERT INTO `usercreate` VALUES (9,'I like to watch video ','我喜歡看影片','蜘蛛人','愛情','23:50:56','2022-03-22 18:09:00',10),(14,'You are never wrong to do the right thing.','堅持做對的事，永遠不會錯。','高年級實習生','勵志','00:30:50','2022-09-16 00:23:08',61),(15,'1123','4214','1414','414','00:04:14','2022-10-11 23:59:35',61),(16,'dodo','嘟嘟','蜘蛛人','愛情','12:33:33','2022-10-12 00:37:30',61),(17,'dodo','嘟嘟','蜘蛛人','ththt','12:33:33','2022-10-12 00:37:52',61),(18,'dodo','嘟嘟','蜘蛛人','ththt','12:33:33','2022-10-12 00:38:02',61),(19,'safa','我','蜘蛛','動作','01:31:52','2022-10-25 01:32:31',61),(20,'asd','支柱','置諸','動作','01:31:52','2022-10-25 01:35:01',61),(21,'dsdasd','我','蜘蛛人','動作','01:03:02','2022-10-25 21:33:05',61),(22,'dsdasd','我','蜘蛛人','科幻','01:03:02','2022-10-25 21:33:58',61),(23,'You are never wrong to do the right thin','堅持做對的事，永遠不會錯','高年級實習生','動作','01:02:30','2022-11-21 01:20:51',73),(24,'hate','我','我','動作','01:31:52','2022-11-21 01:32:46',72),(25,'aaa','我','我','動作','01:31:52','2022-11-21 01:33:17',72),(26,'sss','我','我','動作','01:31:52','2022-11-21 01:34:11',72),(27,'Adventure is out there','生活就是冒險。','天外奇蹟','動畫','00:50:34','2022-12-15 20:15:28',81),(28,'Adventure is out there','生活就是冒險。','天外奇蹟','動畫','00:50:34','2022-12-15 20:38:32',72);
-/*!40000 ALTER TABLE `usercreate` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -55,4 +45,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-18  0:17:21
+-- Dump completed on 2022-12-19  0:32:46

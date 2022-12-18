@@ -30,16 +30,6 @@ CREATE TABLE `favorite` (
   KEY `userid` (`userid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `favorite`
---
-
-LOCK TABLES `favorite` WRITE;
-/*!40000 ALTER TABLE `favorite` DISABLE KEYS */;
-INSERT INTO `favorite` VALUES (1,1,15),(3,0,42),(4,1,0),(5,1,80),(6,1,76),(7,1,42),(8,1,42),(9,1,45),(10,1,83),(11,1,2),(12,67,76),(13,67,3),(14,67,10),(15,67,47),(16,61,41),(18,61,40),(20,66,4),(21,61,32),(22,66,101),(23,1,5),(24,66,2),(25,66,93),(26,68,93),(27,68,5),(28,68,206),(29,68,212),(30,71,93),(31,71,96),(33,61,95),(34,61,5),(35,69,371),(40,61,3),(42,61,8),(43,69,3),(45,72,5),(52,74,3),(53,76,2),(54,76,93),(55,76,103),(56,76,217),(57,76,31),(58,76,28),(60,73,2),(61,78,2),(63,79,2),(69,69,101),(73,69,8),(74,69,76),(75,69,10),(77,69,4),(78,69,7),(79,80,5),(80,80,76),(81,80,174),(82,80,7),(84,80,8),(85,80,109),(86,72,165),(87,72,40),(88,72,192),(90,72,4),(91,80,157),(94,72,97),(95,72,190),(101,80,2),(103,72,103);
-/*!40000 ALTER TABLE `favorite` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -50,4 +40,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-18  0:16:56
+-- Dump completed on 2022-12-19  0:32:48
